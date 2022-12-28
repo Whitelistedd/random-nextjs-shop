@@ -5,12 +5,15 @@ import Layout from "../Layout";
 import { Provider } from "react-redux";
 import { wrapper } from "@/redux/store";
 
-function App({ Component, pageProps }: AppProps) {
+function App({ Component, ...rest }: AppProps) {
+  const { store, props } = wrapper.useWrappedStore(rest);
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Component {...props} />
+      </Layout>
+    </Provider>
   );
 }
 
-export default wrapper.withRedux(App);
+export default App;

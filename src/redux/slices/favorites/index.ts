@@ -1,4 +1,3 @@
-import { REHYDRATE } from "redux-persist";
 import { createSlice } from "@reduxjs/toolkit";
 import { initiailCartState } from "./favorites.types";
 
@@ -30,14 +29,6 @@ const favoritesSlice = createSlice({
         (product) => product.id !== action.payload.id
       );
       state.products = newcart;
-    },
-  },
-  extraReducers: {
-    [REHYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.chatRoom,
-      };
     },
   },
 });

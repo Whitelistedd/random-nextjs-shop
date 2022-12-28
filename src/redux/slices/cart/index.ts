@@ -1,6 +1,5 @@
 import { CartProductType, initiailCartState } from "./cart.types";
 
-import { REHYDRATE } from "redux-persist";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: initiailCartState = {
@@ -78,14 +77,6 @@ const cartSlice = createSlice({
       state.products = [];
       state.quantity = 0;
       state.total = 0;
-    },
-  },
-  extraReducers: {
-    [REHYDRATE]: (state, action) => {
-      return {
-        ...state,
-        ...action.payload.chatRoom,
-      };
     },
   },
 });

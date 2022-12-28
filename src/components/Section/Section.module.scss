@@ -1,0 +1,29 @@
+@import "@/styles/vars.scss";
+
+.section {
+  width: 339px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 30px;
+  align-self: flex-end;
+  justify-content: space-between;
+
+  &_arrow {
+    transition: 300ms ease;
+    &:hover {
+      transform: translateX(10px);
+      cursor: pointer;
+    }
+  }
+
+  &_title {
+    color: $black;
+  }
+
+  &_adverts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

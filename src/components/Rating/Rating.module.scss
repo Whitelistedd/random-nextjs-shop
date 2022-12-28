@@ -1,0 +1,24 @@
+@import "@/styles/vars.scss";
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &_rating {
+    display: flex;
+    gap: 4px;
+  }
+
+  &_reviews {
+    text-decoration: underline;
+    color: $darkGrey;
+  }
+
+  &_filledStar {
+    fill: $orange;
+  }
+  &_star {
+    fill: #e9e9eb;
+  }
+}

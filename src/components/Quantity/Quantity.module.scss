@@ -1,0 +1,21 @@
+@import "@/styles/vars.scss";
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: $grey;
+  padding: 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  max-width: 119px;
+  justify-content: flex-end;
+
+  &_actions {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

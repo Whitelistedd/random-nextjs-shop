@@ -1,0 +1,76 @@
+@import "@/styles/vars.scss";
+.product {
+  width: 332px;
+  height: 462px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  color: $black;
+  border: 1px solid $grey;
+  padding: 31px 30px;
+
+  &_IMGContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  &_IMG {
+    object-fit: contain;
+  }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  &_category {
+    color: $darkGrey;
+    font-weight: 400;
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &_name {
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  &_price {
+    font-weight: 600;
+    font-size: 22px;
+  }
+
+  &_amount {
+    font-weight: 300;
+    font-size: 11px;
+    color: $darkGrey;
+  }
+
+  &_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &_addedButton {
+    transition: 200ms linear;
+    white-space: nowrap;
+    padding: 10px 19px !important;
+    background-color: $blue;
+    z-index: 2;
+  }
+
+  &_cartButtons {
+    display: flex;
+    width: 100%;
+  }
+
+  &_quantity {
+    width: 119px;
+    margin-left: -50px;
+    justify-content: flex-end;
+  }
+}

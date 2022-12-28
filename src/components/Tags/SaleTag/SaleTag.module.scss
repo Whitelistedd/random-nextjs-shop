@@ -1,0 +1,29 @@
+@import "@/styles/vars.scss";
+
+.saleTag {
+  color: black;
+  display: flex;
+  position: relative;
+  background-color: $yellow;
+  height: 24px;
+  clip-path: polygon(
+    0 0,
+    90% 0%,
+    100% 0%,
+    80% 100%,
+    100% 100%,
+    20% 100%,
+    0% 100%,
+    15% 0%
+  );
+  &_label {
+    padding: 0px 15px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 15px;
+  }
+}

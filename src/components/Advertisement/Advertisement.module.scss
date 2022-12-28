@@ -1,0 +1,84 @@
+@import "@/styles/vars.scss";
+
+.advertisement {
+  position: relative;
+  display: flex;
+  color: $grey;
+
+  &_info {
+    background-color: $darkBlue;
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+  }
+
+  &_desc {
+    line-height: 24px;
+    font-size: 15px;
+  }
+
+  &_tag {
+    width: 71px;
+  }
+
+  &_button {
+    background-color: transparent;
+    border: none;
+    align-self: flex-start;
+    opacity: 0.8;
+    font-weight: 500;
+    font-size: 11px;
+    z-index: 2;
+
+    &:hover {
+      cursor: pointer;
+      &::after {
+        content: "w";
+        transform: translate(0px, -2px);
+      }
+    }
+
+    &::after {
+      content: "w";
+      width: 16px;
+      transition: 200ms ease;
+      display: inline-block;
+      opacity: 0.1;
+      color: $darkBlue;
+      transform: translate(-10px, -2px);
+      border: 2px solid #ffffff;
+      border-radius: 90px;
+      padding: 3px 5px;
+      height: 20px;
+    }
+  }
+}
+
+.advertisementReverse {
+  flex-direction: row-reverse;
+  background-color: $grey;
+
+  &_info {
+    background-color: $grey;
+    color: $black;
+  }
+
+  &_tag {
+    float: right;
+  }
+
+  &_desc {
+    word-wrap: break-word;
+  }
+
+  &_button {
+    color: $black;
+    &::after {
+      opacity: 0.5;
+      color: $grey;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "@/styles/vars.scss";
+
+.like {
+  border: 1px solid $grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  transition: 300ms ease;
+
+  .heart {
+    color: $grey;
+  }
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid rgb($red, 0.5);
+    .heart {
+      color: rgb($red, 0.5);
+    }
+  }
+}
+
+.liked {
+  border: 1px solid $red;
+  .heart {
+    color: $red;
+  }
+}

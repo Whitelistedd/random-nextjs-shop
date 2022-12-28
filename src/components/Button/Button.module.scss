@@ -1,0 +1,11 @@
+@import "@/styles/vars.scss";
+.button {
+  padding: 10px 56px;
+  border-radius: 90px;
+  border: none;
+  background-color: $green;
+
+  &:hover {
+    cursor: pointer;
+  }
+}

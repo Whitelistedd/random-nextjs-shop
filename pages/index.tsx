@@ -1,4 +1,5 @@
 import {
+  productsApi,
   useGetProductCategoriesQuery,
   useGetProductsQuery,
 } from "@/services/products";
@@ -10,6 +11,7 @@ import { ProductType } from "@/types/product";
 import { Section } from "@/components/Section";
 import styles from "./index.module.scss";
 import { useState } from "react";
+import { wrapper } from "@/redux/store";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("");
@@ -62,3 +64,25 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = wrapper.getServerSideProps(
+  (store) => async (context) => {
+    await store.dispatch(
+      productsApi.endpoints.getProducts.initiate({
+        limit: 0,
+        sort: "asc",
+        category: "all",
+      })
+    );
+
+    await store.dispatch(productsApi.endpoints.getProductCategories.initiate());
+
+    await Promise.all(
+      store.dispatch(productsApi.util.getRunningQueriesThunk())
+    );
+
+    return {
+      props: {},
+    };
+  }
+);
